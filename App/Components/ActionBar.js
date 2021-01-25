@@ -2,10 +2,10 @@ import React from 'react';
 import { StyleSheet, View, Image, TouchableOpacity } from 'react-native';
 import { Images, Metrics } from '../Themes';
 
-export default function ActionBar( {onPressNext} ) {
+export default function ActionBar( {onPressNext, onPressPrev, onPressBoost} ) {
   return (
     <View style={styles.actionBar}>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onPressPrev}>
         <View style={styles.circle}>
           <Image style={styles.rewindIcon} source={Images.rewind} />
         </View>
@@ -15,7 +15,7 @@ export default function ActionBar( {onPressNext} ) {
           <Image style={styles.nopeIcon} source={Images.nope} />
         </View>
       </TouchableOpacity>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={onPressBoost}>
         <View style={styles.circle}>
           <Image style={styles.boostIcon} source={Images.boost} />
         </View>
